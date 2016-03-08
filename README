@@ -1,0 +1,31 @@
+CoreOS Vagrant Cluster.
+
+set the size and build of core-os in the config.rb file
+
+# Size of the CoreOS cluster created by Vagrant
+$num_instances=3
+# Official CoreOS channel from which updates should be downloaded
+$update_channel='beta'
+
+bring up cluster with
+
+vagrant up
+
+Check status.
+
+$ vagrant status
+Current machine states:
+
+core-01                   running (virtualbox)
+core-02                   running (virtualbox)
+core-03                   running (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+
+Connect to one of the machines with:
+-A Enables forwarding of the authentication agent connection
+
+vagrant ssh core-01 -- -A
+
